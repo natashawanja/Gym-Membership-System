@@ -1,0 +1,47 @@
+[
+    {
+        "member_id": "5678",
+        "first_name": "George",
+        "last_name": "Kamau",
+        "age": 65,
+        "branch": "Parklands",
+        "member_type": "Senior",
+        "discount_rate": 0.3
+    },
+    {
+        "member_id": "4567",
+        "first_name": "John",
+        "last_name": "Karanja",
+        "age": 45,
+        "branch": "Parklands",
+        "member_type": "Regular",
+        "discount_rate": 50.0
+    },
+    {
+        "member_id": "8976",
+        "first_name": "Rose",
+        "last_name": "Wawira",
+        "age": 67,
+        "branch": "Westlands",
+        "member_type": "Regular",
+        "discount_rate": 0.0
+    },
+    {
+        "member_id": "3245",
+        "first_name": "George",
+        "last_name": "Gitau",
+        "age": 54,
+        "branch": "Parklands",
+        "member_type": "Corporate",
+        "discount_rate": 0.25
+    },
+    {
+        "member_id": "2678",
+        "first_name": "Joseph",
+        "last_name": "Kimani",
+        "age": 17,
+        "branch": "Westlands",
+        "member_type": "Student",
+        "discount_rate": 0.15
+    }
+]
