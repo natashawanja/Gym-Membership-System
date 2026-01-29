@@ -9,15 +9,6 @@
         "discount_rate": 0.0
     },
     {
-        "member_id": "3245",
-        "first_name": "George",
-        "last_name": "Gitau",
-        "age": 54,
-        "branch": "Parklands",
-        "member_type": "Corporate",
-        "discount_rate": 0.25
-    },
-    {
         "member_id": "2678",
         "first_name": "Joseph",
         "last_name": "Kimani",
@@ -36,14 +27,6 @@
         "discount_rate": 0.0
     },
     {
-        "first_name": "Benard",
-        "last_name": "Onyango",
-        "age": 50,
-        "member_id": "5678",
-        "branch": "Kileleshwa",
-        "member_type": "Senior"
-    },
-    {
         "first_name": "Humphery",
         "last_name": "Longhorn",
         "age": 60,
@@ -60,11 +43,11 @@
         "member_type": "Regular"
     },
     {
-        "first_name": "John",
-        "last_name": "Linus",
+        "first_name": "Gitau",
+        "last_name": "Isaac",
         "age": 70,
-        "member_id": "4567",
-        "branch": "Kileleshwa",
+        "member_id": "3245",
+        "branch": "Parklands",
         "member_type": "Senior"
     }
 ]
