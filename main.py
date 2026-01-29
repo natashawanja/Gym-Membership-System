@@ -44,6 +44,7 @@ def main():
             while True:
                 first_name = input("Enter first name: ")
                 last_name = input("Enter last name: ")
+                # this checks if the names are typed in alphabets
                 if first_name.isalpha() and last_name.isalpha():
                     break
                 print("Invalid name. Please use alphabetic characters only.")
@@ -101,7 +102,7 @@ def main():
                 continue
 
             # 6. CREATE MEMBER OBJECT BASED ON TYPE
-            # Note: Ensure these arguments match the order in your class __init__ methods
+            # these arguments match the order in class __init__ methods
             if sub_choice == '1':
                 new_member = RegularMember(first_name, last_name, age, member_id, branch)
             elif sub_choice == '2':

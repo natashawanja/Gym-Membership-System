@@ -1,6 +1,7 @@
 import json
 import os
-
+# this is where data persistence happens
+# this class handles all the file operations
 class GymManager:
     def __init__(self):
         self.filename = 'members.json'
