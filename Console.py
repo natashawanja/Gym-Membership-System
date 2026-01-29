@@ -3,12 +3,13 @@ from RegularMember import RegularMember
 from StudentMember import StudentMember
 from SeniorMember import SeniorMember
 from CorporateMember import CorporateMember
-
+# this is the console class that handles user interaction
 class Console:
+    # this initializes the console with a GymManager instance
     def __init__(self):
         # Initializing the logic engine
         self.manager = GymManager()
-
+    # this is the main application loop
     def run_app(self):
         """Main menu loop to run the program."""
         while True:
@@ -35,7 +36,8 @@ class Console:
             elif choice == '5':
                 print("Exiting the Diikochii Gym Membership Management system. Goodbye!")
                 break
-
+    
+    # this handles the registration user interface
     def register_member(self):
         """Handles the registration process and input validation."""
         # --- SUB-MENU VALIDATION ---
@@ -119,7 +121,7 @@ class Console:
         # 6. SAVE TO JSON
         self.manager.save_new_member(new_member)
         print(f"Success! {first_name} {last_name} registered at {branch} branch.")
-
+    # this handles the update user interface
     def update_member(self):
         """Handles the update process."""
         while True:
@@ -151,7 +153,7 @@ class Console:
             print(f"Successfully updated details for ID: {target}!")
         else:
             print("Update failed please try again")
-
+    # this handles the deletion user interface
     def delete_member(self):
         """Handles the deletion process."""
         while True:
