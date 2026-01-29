@@ -26,11 +26,11 @@ class Console:
                 continue
             
             if choice == '1':
-                self.register_member_ui()
+                self.register_member()
             elif choice == '2':
-                self.update_member_ui()
+                self.update_member_console()
             elif choice == '3':
-                self.delete_member_ui()
+                self.delete_member_console()
             elif choice == '4':
                 self.manager.view_all_members()
             elif choice == '5':
@@ -122,39 +122,86 @@ class Console:
         self.manager.save_new_member(new_member)
         print(f"Success! {first_name} {last_name} registered at {branch} branch.")
     # this handles the update user interface
-    def update_member(self):
-        """Handles the update process."""
+
+
+    def update_member_console(self):
+        """Handles the update process with specific input order and cross-validation."""
+        # 1. ENTER MEMBER ID
         while True:
-            target = input("Enter ID to update: ")
+            target = input("Enter the 4-digit ID of the member to update: ")
             if len(target) == 4 and target.isdigit():
                 break
-            print("Invalid ID. Must be exactly 4 digits.")
+            print("Invalid ID format. Must be exactly 4 digits.")
         
         if self.manager.is_id_unique(target):
-            print("Error: Member ID not found")
+            print("Error: Member ID not found in the database.")
             return
 
+        # 2. ENTER NEW NAME AND LAST NAME
         while True:
-            new_first = input("Enter new first name: ")
-            new_last = input("Enter new last name: ")
-            if new_first.isalpha() and new_last.isalpha():
+            new_f = input("Enter new first name: ")
+            new_l = input("Enter new last name: ")
+            if new_f.isalpha() and new_l.isalpha():
                 break
-            else:
-                print("Invalid name. Please use alphabetic characters only.")
-            
+            print("Invalid names! Please use alphabetic characters only.")
+
+        # 3. SELECT MEMBER TYPE AND VALIDATE AGE
+        # This loop ensures the age matches the rules for the selected type
         while True:
+            print("\n--- Select Membership Type ---")
+            print("1. Regular | 2. Student (16-25) | 3. Senior (60+) | 4. Corporate")
+            t_choice = input("Choice: ")
+            
+            if t_choice not in ['1', '2', '3', '4']:
+                print("Invalid selection! Please choose 1, 2, 3, or 4.")
+                continue
+
             try:
-                new_age = int(input("Enter new age: "))
+                new_a = int(input("Enter member age: "))
+                
+                # Validation Logic for Student
+                if t_choice == '2' and not (16 <= new_a <= 25):
+                    print(f"Validation Error: Age {new_a} is not eligible for Student (16-25). Please try again.")
+                    continue
+                
+                # Validation Logic for Senior
+                elif t_choice == '3' and new_a < 60:
+                    print(f"Validation Error: Age {new_a} is not eligible for Senior (60+). Please try again.")
+                    continue
+                
+                # If it passes, break the Type/Age loop
                 break
             except ValueError:
-                print("Invalid age. Please enter a number.")
+                print("Invalid age! Please enter a numeric value.")
 
-        if self.manager.update_member(target, new_first, new_last, new_age):
-            print(f"Successfully updated details for ID: {target}!")
-        else:
-            print("Update failed please try again")
+        # 4. SELECT BRANCH
+        while True:
+            print("\n--- Select Branch ---")
+            print("1. Kileleshwa | 2. Westlands | 3. Parklands")
+            b_choice = input("Choice: ")
+            if b_choice in ['1', '2', '3']:
+                new_b = {"1": "Kileleshwa", "2": "Westlands", "3": "Parklands"}[b_choice]
+                break
+            print("Invalid branch selection.")
+
+        # 5. ENTER SUBCLASS SPECIFIC INFO AND CREATE OBJECT
+        if t_choice == '1':
+            updated_member = RegularMember(new_f, new_l, new_a, target, new_b)
+        elif t_choice == '2':
+            inst = input("Enter Institution Name: ")
+            updated_member = StudentMember(new_f, new_l, new_a, target, inst, new_b)
+        elif t_choice == '3':
+            updated_member = SeniorMember(new_f, new_l, new_a, target, new_b)
+        elif t_choice == '4':
+            comp = input("Enter Company Name: ")
+            updated_member = CorporateMember(new_f, new_l, new_a, target, comp, new_b)
+
+        # 6. SAVE AND SUCCESS MESSAGE
+        if self.manager.save_new_member(updated_member, overwrite=True):
+            print(f"\nSuccess! Member {target} details have been updated.")
+
     # this handles the deletion user interface
-    def delete_member(self):
+    def delete_member_console(self):
         """Handles the deletion process."""
         while True:
             target = input("Enter the 4-digit ID of the member to delete: ")

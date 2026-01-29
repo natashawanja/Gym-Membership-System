@@ -1,14 +1,5 @@
 [
     {
-        "member_id": "5678",
-        "first_name": "Margret",
-        "last_name": "Wambui",
-        "age": 56,
-        "branch": "Parklands",
-        "member_type": "Senior",
-        "discount_rate": 0.3
-    },
-    {
         "member_id": "8976",
         "first_name": "Rose",
         "last_name": "Wawira",
@@ -36,12 +27,44 @@
         "discount_rate": 0.15
     },
     {
-        "member_id": "8905",
-        "first_name": "lisa",
-        "last_name": "wambui",
-        "age": 45,
-        "branch": "Westlands",
+        "member_id": "6734",
+        "first_name": "min",
+        "last_name": "linus",
+        "age": 24,
+        "branch": "Kileleshwa",
         "member_type": "Regular",
         "discount_rate": 0.0
+    },
+    {
+        "first_name": "Benard",
+        "last_name": "Onyango",
+        "age": 50,
+        "member_id": "5678",
+        "branch": "Kileleshwa",
+        "member_type": "Senior"
+    },
+    {
+        "first_name": "Humphery",
+        "last_name": "Longhorn",
+        "age": 60,
+        "member_id": "1289",
+        "branch": "Parklands",
+        "member_type": "Senior"
+    },
+    {
+        "first_name": "John",
+        "last_name": "Nathan",
+        "age": 50,
+        "member_id": "8905",
+        "branch": "Parklands",
+        "member_type": "Regular"
+    },
+    {
+        "first_name": "John",
+        "last_name": "Linus",
+        "age": 70,
+        "member_id": "4567",
+        "branch": "Kileleshwa",
+        "member_type": "Senior"
     }
 ]

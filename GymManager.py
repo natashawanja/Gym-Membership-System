@@ -1,5 +1,7 @@
 import json
 import os
+from StudentMember import StudentMember
+from CorporateMember import CorporateMember
 # this is where data persistence happens
 # this class handles all the file operations
 class GymManager:
@@ -32,25 +34,34 @@ class GymManager:
                 return False
         return True
 
-    def save_new_member(self, member):
-        """Saves a member object as a dictionary in the JSON list."""
-        if not self.is_id_unique(member.get_member_id()):
-            print(f"\nError: Member ID {member.get_member_id()} already exists!")
-            return False
-
+    def save_new_member(self, member, overwrite=False):
+        """Saves member, with an option to overwrite existing ID for updates."""
         data = self._load_data()
         
-        # Convert the object into a dictionary for JSON storage
+        if overwrite:
+            # Remove the existing entry to avoid duplicates during update
+            data = [m for m in data if m.get('member_id') != member.get_member_id()]
+        else:
+            if not self.is_id_unique(member.get_member_id()):
+                print(f"\nError: Member ID {member.get_member_id()} already exists!")
+                return False
+
+        # Prepare base dictionary
         member_dict = {
-            "member_id": member.get_member_id(),
-            "first_name": member.get_first_name(),
-            "last_name": member.get_last_name(),
-            "age": member.get_age(),
-            "branch": member.get_branch(),  # New Branch field
-            "member_type": member.member_type,
-            "discount_rate": member.calculate_discount()
+            'first_name': member.get_first_name(),
+            'last_name': member.get_last_name(),
+            'age': member.get_age(),
+            'member_id': member.get_member_id(),
+            'branch': member.get_branch(),
+            'member_type': member.member_type
         }
         
+        # Add subclass specific attributes
+        if isinstance(member, StudentMember):
+            member_dict['institution'] = member.get_institution()
+        elif isinstance(member, CorporateMember):
+            member_dict['company'] = member.get_company()
+
         data.append(member_dict)
         self._save_data(data)
         return True
