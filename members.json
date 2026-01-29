@@ -49,5 +49,29 @@
         "member_id": "3245",
         "branch": "Parklands",
         "member_type": "Senior"
+    },
+    {
+        "first_name": "mary",
+        "last_name": "wangari",
+        "age": 60,
+        "member_id": "4500",
+        "branch": "Kileleshwa",
+        "member_type": "Regular"
+    },
+    {
+        "first_name": "natasha",
+        "last_name": "wanja",
+        "age": 24,
+        "member_id": "2400",
+        "branch": "Kileleshwa",
+        "member_type": "Regular"
+    },
+    {
+        "first_name": "natasha",
+        "last_name": "wanja",
+        "age": 24,
+        "member_id": "5621",
+        "branch": "Kileleshwa",
+        "member_type": "Regular"
     }
 ]
