@@ -1,14 +1,5 @@
 [
     {
-        "member_id": "8976",
-        "first_name": "Rose",
-        "last_name": "Wawira",
-        "age": 67,
-        "branch": "Westlands",
-        "member_type": "Regular",
-        "discount_rate": 0.0
-    },
-    {
         "member_id": "2678",
         "first_name": "Joseph",
         "last_name": "Kimani",
@@ -73,5 +64,13 @@
         "member_id": "5621",
         "branch": "Kileleshwa",
         "member_type": "Regular"
+    },
+    {
+        "first_name": "Rose",
+        "last_name": "Karanja",
+        "age": 60,
+        "member_id": "8976",
+        "branch": "Westlands",
+        "member_type": "Senior"
     }
 ]

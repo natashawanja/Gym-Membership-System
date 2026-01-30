@@ -185,6 +185,7 @@ class Console:
             print("Invalid branch selection.")
 
         # 5. ENTER SUBCLASS SPECIFIC INFO AND CREATE OBJECT
+        # target is used as the member ID to keep it unchanged
         if t_choice == '1':
             updated_member = RegularMember(new_f, new_l, new_a, target, new_b)
         elif t_choice == '2':
