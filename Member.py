@@ -31,10 +31,12 @@ class Member(ABC):
     def set_age(self, age): 
         self.__age = age
 
+    # this is the abstract method that must be implemented by subclasses
     @abstractmethod
     def calculate_discount(self):
         pass
     
+    # this method prints the member details
     def get_details(self):
         print(f"Member ID: {self.get_member_id()}") 
         print(f"Name: {self.__first_name} {self.__last_name}")

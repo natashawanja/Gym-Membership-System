@@ -16,6 +16,7 @@ class GymManager:
         if not os.path.exists(self.filename):
             return []
         try:
+            # this will read the entire JSON file and return a list of dictionaries
             with open(self.filename, 'r') as file:
                 return json.load(file)
         except (json.JSONDecodeError, ValueError):
@@ -23,6 +24,7 @@ class GymManager:
 
     def _save_data(self, data):
         """Helper method to write the entire list to the JSON file."""
+        # this will overwrite the entire JSON file with the new data
         with open(self.filename, 'w') as file:
             json.dump(data, file, indent=4)
 
@@ -61,7 +63,7 @@ class GymManager:
             member_dict['institution'] = member.get_institution()
         elif isinstance(member, CorporateMember):
             member_dict['company'] = member.get_company()
-
+        # this appends the new member dictionary to the list
         data.append(member_dict)
         self._save_data(data)
         return True
@@ -83,7 +85,7 @@ class GymManager:
         """Updates specific fields in the JSON dictionary."""
         data = self._load_data()
         found = False
-        
+        # this loops through the list to find the member by ID
         for m in data:
             if m.get('member_id') == target_id:
                 m['first_name'] = new_first
@@ -91,7 +93,7 @@ class GymManager:
                 m['age'] = new_age
                 found = True
                 break
-        
+        # this saves the updated list back to the JSON file
         if found:
             self._save_data(data)
         return found
@@ -102,11 +104,14 @@ class GymManager:
         if not data:
             print("\n--- No members found in the database. ---")
             return
-
+        # this is the header for the table
         print("\n" + "="*70)
+        # this is the title for the table
         print(f"{'ID':<6} {'Name':<20} {'Age':<5} {'Branch':<15} {'Type':<10}")
+        # this is the separator line
         print("-" * 70)
         
+        # this loops through each member and prints their details
         for member in data:
             full_name = f"{member.get('first_name')} {member.get('last_name')}"
             m_id = member.get('member_id')

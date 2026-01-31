@@ -2,7 +2,7 @@
 ## This program moves Diikochii Gym from paper records to a digital Python-based system. It helps the gym manager organize members across three branches (Kileleshwa, Westlands, and Parklands) without losing documents
 ### Key Features
 
-Full CRUD Support: The admin can Create new members, Read data from a members.json file, Update names or ages, and Delete members using a unique 4-digit ID.
+Full CRUD Support: The admin can Create new members, Read data from a members.json file, Update a members first name, lastname, member type , age, and branch by first typing the unique ID of the member and in case any changes need to be made, and Delete members using a unique 4-digit ID.
 
 
 
@@ -16,4 +16,4 @@ Automated Discounts: Calculates discounts automatically: Seniors (30%), Corporat
 OOP Structure: Uses Inheritance so all members share a base "Member" class, and Encapsulation to keep personal info like names and IDs private.
 
 
-Smart Logic: Uses a GymManager "logic engine" to handle all file operations and business rules.
+Smart Logic: Uses a GymManager "logic engine" to handle all file operations and business rules. And Console displays the menu for user interaction

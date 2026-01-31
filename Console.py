@@ -121,9 +121,9 @@ class Console:
         # 6. SAVE TO JSON
         self.manager.save_new_member(new_member)
         print(f"Success! {first_name} {last_name} registered at {branch} branch.")
+
+
     # this handles the update user interface
-
-
     def update_member_console(self):
         """Handles the update process with specific input order and cross-validation."""
         # 1. ENTER MEMBER ID
