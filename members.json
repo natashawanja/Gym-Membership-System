@@ -72,5 +72,13 @@
         "member_id": "8976",
         "branch": "Westlands",
         "member_type": "Senior"
+    },
+    {
+        "first_name": "jane",
+        "last_name": "kamau",
+        "age": 50,
+        "member_id": "8970",
+        "branch": "Kileleshwa",
+        "member_type": "Regular"
     }
 ]
