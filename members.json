@@ -1,61 +1,11 @@
 [
     {
-        "member_id": "2678",
-        "first_name": "Joseph",
-        "last_name": "Kimani",
-        "age": 17,
-        "branch": "Westlands",
-        "member_type": "Student",
-        "discount_rate": 0.15
-    },
-    {
-        "member_id": "6734",
-        "first_name": "min",
-        "last_name": "linus",
-        "age": 24,
-        "branch": "Kileleshwa",
-        "member_type": "Regular",
-        "discount_rate": 0.0
-    },
-    {
         "first_name": "Humphery",
         "last_name": "Longhorn",
         "age": 60,
         "member_id": "1289",
         "branch": "Parklands",
         "member_type": "Senior"
-    },
-    {
-        "first_name": "John",
-        "last_name": "Nathan",
-        "age": 50,
-        "member_id": "8905",
-        "branch": "Parklands",
-        "member_type": "Regular"
-    },
-    {
-        "first_name": "Gitau",
-        "last_name": "Isaac",
-        "age": 70,
-        "member_id": "3245",
-        "branch": "Parklands",
-        "member_type": "Senior"
-    },
-    {
-        "first_name": "mary",
-        "last_name": "wangari",
-        "age": 60,
-        "member_id": "4500",
-        "branch": "Kileleshwa",
-        "member_type": "Regular"
-    },
-    {
-        "first_name": "natasha",
-        "last_name": "wanja",
-        "age": 24,
-        "member_id": "2400",
-        "branch": "Kileleshwa",
-        "member_type": "Regular"
     },
     {
         "first_name": "natasha",
@@ -74,11 +24,12 @@
         "member_type": "Senior"
     },
     {
-        "first_name": "jane",
-        "last_name": "kamau",
-        "age": 50,
-        "member_id": "8970",
+        "first_name": "Jane",
+        "last_name": "Karanja",
+        "age": 20,
+        "member_id": "2134",
         "branch": "Kileleshwa",
-        "member_type": "Regular"
+        "member_type": "Student",
+        "institution": "C3s Business School"
     }
 ]
