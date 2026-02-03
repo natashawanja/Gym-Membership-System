@@ -58,6 +58,7 @@ class Console:
         while True:
             first_name = input("Enter first name: ")
             last_name = input("Enter last name: ")
+            # this checks if names contain only alphabetic characters
             if first_name.isalpha() and last_name.isalpha():
                 break
             print("Invalid name. Please use alphabetic characters only.")
@@ -119,6 +120,7 @@ class Console:
             new_member = CorporateMember(first_name, last_name, age, member_id, comp, branch)
 
         # 6. SAVE TO JSON
+        # this calls the GymManager method to save the new member
         self.manager.save_new_member(new_member)
         print(f"Success! {first_name} {last_name} registered at {branch} branch.")
 
@@ -129,6 +131,7 @@ class Console:
         # 1. ENTER MEMBER ID
         while True:
             target = input("Enter the 4-digit ID of the member to update: ")
+            # the target.isdigit() ensures only digits are entered
             if len(target) == 4 and target.isdigit():
                 break
             print("Invalid ID format. Must be exactly 4 digits.")
