@@ -1,7 +1,7 @@
 from Member import Member
 class RegularMember(Member):
     def __init__(self, first_name, last_name, age, member_id, branch):
-        # call the constructor of the parent class
+       # super init is used to call the parent class constructor
         super().__init__(first_name, last_name, age, member_id, branch)
         self.member_type = "Regular"
     # method to calculate discount for regular members
