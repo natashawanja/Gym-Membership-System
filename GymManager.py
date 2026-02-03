@@ -11,6 +11,7 @@ class GymManager:
         # Changed default extension to .json
         
 
+    # this is a helper method to load data from the JSON file
     def _load_data(self):
         """Helper method to read the JSON file and return a list."""
         if not os.path.exists(self.filename):
