@@ -16,7 +16,8 @@ class StudentMember(Member):
         # this polymorphism method returns a discount rate for student members
         return 0.15  # 15% discount for student members
     def get_details(self):
-        # override the get_details method to include member type and institution
+        # this super calls the parent class get_details method
         super().get_details()
+        # override the get_details method to include member type and institution
         print(f"Member Type: {self.member_type}")
         print(f"Institution: {self.get_institution()}")

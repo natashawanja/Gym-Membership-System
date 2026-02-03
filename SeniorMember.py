@@ -9,6 +9,7 @@ class SeniorMember(Member):
         # this polymorphism method returns a higher discount rate for senior members
         return 0.30  # 30% discount for senior members
     def get_details(self):
-        # override the get_details method to include member type
+        # this super calls the parent class get_details method
         super().get_details()
+        # override the get_details method to include member type
         print(f"Member Type: {self.member_type}")

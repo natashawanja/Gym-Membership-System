@@ -9,6 +9,7 @@ class RegularMember(Member):
         # this polymorphism method returns no discount for regular members
        return 0.0
     def get_details(self):
-        # override the get_details method to include member type
+        # this super calls the parent class get_details method
         super().get_details()
+        # override the get_details method to include member type
         print(f"Member Type: {self.member_type}")
