@@ -16,14 +16,6 @@
         "member_type": "Regular"
     },
     {
-        "first_name": "Rose",
-        "last_name": "Karanja",
-        "age": 60,
-        "member_id": "8976",
-        "branch": "Westlands",
-        "member_type": "Senior"
-    },
-    {
         "first_name": "Jane",
         "last_name": "Karanja",
         "age": 20,
@@ -31,5 +23,14 @@
         "branch": "Kileleshwa",
         "member_type": "Student",
         "institution": "C3s Business School"
+    },
+    {
+        "first_name": "Natasha",
+        "last_name": "karanja",
+        "age": 20,
+        "member_id": "8888",
+        "branch": "Westlands",
+        "member_type": "Student",
+        "institution": "C3s Business school"
     }
 ]
